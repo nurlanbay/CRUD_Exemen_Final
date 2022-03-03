@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:c="">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./index.css"/>
+    <title>Document</title>
+</head>
+<body>
+<div class="Block">
+    <div class="Block-title">Main page</div>
+    <div class="Block-content">
+        <div id="tb">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="company : ${companies}">
+                    <td th:text="${company.companyName}"/>
+                    <td>
+                        <a th:href="@{/api/companies/delete/{id}(id=${company.id})}">
+                            <button>delete</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a th:href="@{/api/companies/update/{id}(id=${company.id})}">
+                            <button>update</button>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        <div th:each="company : ${companies}">-->
+        <!--          <span class="title">-->
+        <!--            <a th:href="@{/get/${company.id}}"-->
+        <!--               th:value="${company.companyName}">-->
+        <!--            </a>-->
+        <!--          </span>-->
+
+        <!--            <a th:href="@{/update/{id}(id=${company.id})}">-->
+        <!--                <button class="button">-->
+        <!--                    update-->
+        <!--                </button>-->
+        <!--            </a>-->
+
+        <!--            <a th:href="@{/api/companies/delete/{id}(id=${company.id})}">-->
+        <!--                <button class="button">-->
+        <!--                    delete-->
+        <!--                </button>-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--    </div>-->
+
+        <button class="mainButton">
+            <a href="./addCompany.html">Add new</a>
+        </button>
+    </div>
+</div>
+</body>
+</html>

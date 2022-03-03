@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+  <style>
+    h1 {
+      text-align: center;
+      color: darkcyan;
+    }
+  </style>
+</head>
+<body>
+<h1>Successfully deleted</h1>
+<a th:href="@{/api/companies}">
+  <button>
+    go back
+  </button>
+</a>
+</body>
+</html>
